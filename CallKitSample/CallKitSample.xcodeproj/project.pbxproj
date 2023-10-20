@@ -11,6 +11,8 @@
 		627FF1482AE235AE0032FD8F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627FF1472AE235AE0032FD8F /* ContentView.swift */; };
 		627FF14A2AE235AF0032FD8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 627FF1492AE235AF0032FD8F /* Assets.xcassets */; };
 		627FF14D2AE235AF0032FD8F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 627FF14C2AE235AF0032FD8F /* Preview Assets.xcassets */; };
+		627FF1582AE2443F0032FD8F /* OutgoingInterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627FF1572AE2443F0032FD8F /* OutgoingInterfaceView.swift */; };
+		627FF15A2AE244F40032FD8F /* IncomingInterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627FF1592AE244F40032FD8F /* IncomingInterfaceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,9 @@
 		627FF1472AE235AE0032FD8F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		627FF1492AE235AF0032FD8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		627FF14C2AE235AF0032FD8F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		627FF1532AE240BC0032FD8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		627FF1572AE2443F0032FD8F /* OutgoingInterfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingInterfaceView.swift; sourceTree = "<group>"; };
+		627FF1592AE244F40032FD8F /* IncomingInterfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingInterfaceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +56,10 @@
 		627FF1442AE235AE0032FD8F /* CallKitSample */ = {
 			isa = PBXGroup;
 			children = (
+				627FF1532AE240BC0032FD8F /* Info.plist */,
 				627FF1452AE235AE0032FD8F /* CallKitSampleApp.swift */,
 				627FF1472AE235AE0032FD8F /* ContentView.swift */,
+				627FF1542AE243EE0032FD8F /* Views */,
 				627FF1492AE235AF0032FD8F /* Assets.xcassets */,
 				627FF14B2AE235AF0032FD8F /* Preview Content */,
 			);
@@ -65,6 +72,15 @@
 				627FF14C2AE235AF0032FD8F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		627FF1542AE243EE0032FD8F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				627FF1572AE2443F0032FD8F /* OutgoingInterfaceView.swift */,
+				627FF1592AE244F40032FD8F /* IncomingInterfaceView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +153,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				627FF1582AE2443F0032FD8F /* OutgoingInterfaceView.swift in Sources */,
 				627FF1482AE235AE0032FD8F /* ContentView.swift in Sources */,
+				627FF15A2AE244F40032FD8F /* IncomingInterfaceView.swift in Sources */,
 				627FF1462AE235AE0032FD8F /* CallKitSampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,8 +290,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CallKitSample/Preview Content\"";
+				DEVELOPMENT_TEAM = LXWUX87WJP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CallKitSample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -300,8 +320,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CallKitSample/Preview Content\"";
+				DEVELOPMENT_TEAM = LXWUX87WJP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CallKitSample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

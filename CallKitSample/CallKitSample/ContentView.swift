@@ -14,7 +14,7 @@ struct ContentView: View {
     
     @State var hasActivateCall: Bool = false
     @State var callID: UUID? = nil
-    @State var receiverID: String = "gyeoleeeeeee@gmail.com"
+    @State var receiverID: String = "+821071674879"
     
     private var color: Color {
         colorScheme == .dark ? .white : .black

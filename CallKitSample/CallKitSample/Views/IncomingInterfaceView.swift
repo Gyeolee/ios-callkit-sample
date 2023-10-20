@@ -8,35 +8,36 @@
 import SwiftUI
 
 struct IncomingInterfaceView: View {
+    @EnvironmentObject var callManager: CallManager
+    
     @Binding var hasActivateCall: Bool
     @Binding var callID: UUID?
     
-//    let acceptPublishser = NotificationCenter.default
-//        .publisher(for: Notification.Name.DidCallAccepted)
+    private let acceptPublishser = NotificationCenter.default
+        .publisher(for: Notification.Name.DidCallAccepted)
     
     var body: some View {
         Button {
-            receiveCall(from: "Jaesung Lee", hasVideo: false)
+            receiveCall(from: "Hangyeol Lee", hasVideo: false)
         } label: {
             Image(systemName: "phone.arrow.down.left")
         }
-//        .onReceive(self.acceptPublishser) { _ in
-//            self.hasActivateCall = true
-//            self.providerDelegate?.connectedCall(with: self.callID!)
-//        }
+        .onReceive(acceptPublishser) { _ in
+            hasActivateCall = true
+            callManager.connectedCall(with: callID!)
+        }
     }
     
     func receiveCall(from callerID: String, hasVideo: Bool) {
-//        providerDelegate = ProviderDelegate(callManager: callManager)
-//        
-//        let update = CXCallUpdate()
-//        update.remoteHandle = CXHandle(type: .generic, value: callerID)
-//        let uuid = UUID()
-//        self.callID = uuid
-//        
-//        self.providerDelegate?.reportIncomingCall(with: uuid, remoteUserID: callerID, hasVideo: hasVideo) { error in
-//            if let error = error { print(error.localizedDescription) }
-//            else { print("Ring Ring...") }
-//        }
+        let uuid = UUID()
+        callID = uuid
+        
+        Task {
+            do {
+                try await callManager.reportIncoming(with: uuid, remoteUserID: callerID, hasVideo: hasVideo)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }

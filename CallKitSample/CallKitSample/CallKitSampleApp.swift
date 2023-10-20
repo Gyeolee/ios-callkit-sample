@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct CallKitSampleApp: App {
+    let callManager = CallManager()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(callManager)
         }
     }
 }

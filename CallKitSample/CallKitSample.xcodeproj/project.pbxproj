@@ -13,6 +13,7 @@
 		627FF14D2AE235AF0032FD8F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 627FF14C2AE235AF0032FD8F /* Preview Assets.xcassets */; };
 		627FF1582AE2443F0032FD8F /* OutgoingInterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627FF1572AE2443F0032FD8F /* OutgoingInterfaceView.swift */; };
 		627FF15A2AE244F40032FD8F /* IncomingInterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627FF1592AE244F40032FD8F /* IncomingInterfaceView.swift */; };
+		627FF15D2AE24A740032FD8F /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627FF15C2AE24A740032FD8F /* CallManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		627FF1532AE240BC0032FD8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		627FF1572AE2443F0032FD8F /* OutgoingInterfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingInterfaceView.swift; sourceTree = "<group>"; };
 		627FF1592AE244F40032FD8F /* IncomingInterfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingInterfaceView.swift; sourceTree = "<group>"; };
+		627FF15C2AE24A740032FD8F /* CallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				627FF1452AE235AE0032FD8F /* CallKitSampleApp.swift */,
 				627FF1472AE235AE0032FD8F /* ContentView.swift */,
 				627FF1542AE243EE0032FD8F /* Views */,
+				627FF15B2AE24A5A0032FD8F /* Utils */,
 				627FF1492AE235AF0032FD8F /* Assets.xcassets */,
 				627FF14B2AE235AF0032FD8F /* Preview Content */,
 			);
@@ -81,6 +84,14 @@
 				627FF1592AE244F40032FD8F /* IncomingInterfaceView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		627FF15B2AE24A5A0032FD8F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				627FF15C2AE24A740032FD8F /* CallManager.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +168,7 @@
 				627FF1482AE235AE0032FD8F /* ContentView.swift in Sources */,
 				627FF15A2AE244F40032FD8F /* IncomingInterfaceView.swift in Sources */,
 				627FF1462AE235AE0032FD8F /* CallKitSampleApp.swift in Sources */,
+				627FF15D2AE24A740032FD8F /* CallManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

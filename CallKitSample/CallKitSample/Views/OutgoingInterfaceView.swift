@@ -8,18 +8,17 @@
 import SwiftUI
 
 struct OutgoingInterfaceView: View {
+    @EnvironmentObject var callManager: CallManager
+    
     @Binding var receiverID: String
     @Binding var hasActivateCall: Bool
     @Binding var callID: UUID?
     
     var body: some View {
-        HStack {
-            // MARK: Voice Call
-            Button {
-                startCall(to: self.$receiverID.wrappedValue, hasVideo: false)
-            } label: {
-                Image(systemName: "phone.fill.arrow.up.right")
-            }
+        Button {
+            startCall(to: self.$receiverID.wrappedValue, hasVideo: false)
+        } label: {
+            Image(systemName: "phone.fill.arrow.up.right")
         }
     }
     
@@ -27,9 +26,14 @@ struct OutgoingInterfaceView: View {
         let uuid = UUID()
         callID = uuid
         
-//        self.callManager.startCall(with: uuid, receiverID: receiverID, hasVideo: hasVideo) { error in
-//            if let error = error { print(error.localizedDescription) }
-//            else { self.hasActivateCall = true }
-//        }
+        Task {
+            do {
+                try await callManager.start(with: uuid, receiverID: receiverID, hasVideo: hasVideo)
+                print("전화 걸기")
+                hasActivateCall = true
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }

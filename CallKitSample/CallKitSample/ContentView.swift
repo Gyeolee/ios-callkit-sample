@@ -10,9 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
     
+    @EnvironmentObject var callManager: CallManager
+    
     @State var hasActivateCall: Bool = false
     @State var callID: UUID? = nil
-    @State var receiverID: String = ""
+    @State var receiverID: String = "gyeoleeeeeee@gmail.com"
     
     private var color: Color {
         colorScheme == .dark ? .white : .black

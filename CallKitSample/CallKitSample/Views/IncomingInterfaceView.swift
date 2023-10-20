@@ -15,12 +15,10 @@ struct IncomingInterfaceView: View {
 //        .publisher(for: Notification.Name.DidCallAccepted)
     
     var body: some View {
-        HStack {
-            Button {
-                receiveCall(from: "Jaesung Lee", hasVideo: false)
-            } label: {
-                Image(systemName: "phone.arrow.down.left")
-            }
+        Button {
+            receiveCall(from: "Jaesung Lee", hasVideo: false)
+        } label: {
+            Image(systemName: "phone.arrow.down.left")
         }
 //        .onReceive(self.acceptPublishser) { _ in
 //            self.hasActivateCall = true

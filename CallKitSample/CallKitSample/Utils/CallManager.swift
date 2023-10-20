@@ -26,6 +26,20 @@ final class CallManager: NSObject, ObservableObject {
         let transaction = CXTransaction(action: startCallAction)
         try await requestTransaction(transaction)
     }
+    
+    func end(with uuid: UUID) async throws {
+        let endCallAction = CXEndCallAction(call: uuid)
+        
+        let transaction = CXTransaction(action: endCallAction)
+        try await requestTransaction(transaction)
+    }
+    
+    func mute(with uuid: UUID, muted: Bool) async throws {
+        let mutedCallAction = CXSetMutedCallAction(call: uuid, muted: muted)
+        
+        let transaction = CXTransaction(action: mutedCallAction)
+        try await requestTransaction(transaction)
+    }
 }
 
 extension CallManager {
@@ -37,20 +51,19 @@ extension CallManager {
 // MARK: - CXProviderDelegate
 
 extension CallManager: CXProviderDelegate {
-    func providerDidReset(_ provider: CXProvider) {
-        print("providerDidReset: \(provider)")
-    }
+    func providerDidReset(_ provider: CXProvider) {}
     
-    // 전화 걸기
+    // 걸기
     func provider(_ provider: CXProvider, perform action: CXStartCallAction) {
         action.fulfill()
     }
     
+    // 끊기
     func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
         action.fulfill()
     }
     
-    // 전화 받기
+    // 받기
     func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
         action.fulfill()
     }

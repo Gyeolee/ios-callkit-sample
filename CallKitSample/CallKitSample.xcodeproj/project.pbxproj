@@ -14,6 +14,7 @@
 		627FF1582AE2443F0032FD8F /* OutgoingInterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627FF1572AE2443F0032FD8F /* OutgoingInterfaceView.swift */; };
 		627FF15A2AE244F40032FD8F /* IncomingInterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627FF1592AE244F40032FD8F /* IncomingInterfaceView.swift */; };
 		627FF15D2AE24A740032FD8F /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627FF15C2AE24A740032FD8F /* CallManager.swift */; };
+		627FF1612AE252560032FD8F /* CallInterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627FF1602AE252560032FD8F /* CallInterfaceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		627FF1572AE2443F0032FD8F /* OutgoingInterfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutgoingInterfaceView.swift; sourceTree = "<group>"; };
 		627FF1592AE244F40032FD8F /* IncomingInterfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingInterfaceView.swift; sourceTree = "<group>"; };
 		627FF15C2AE24A740032FD8F /* CallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
+		627FF1602AE252560032FD8F /* CallInterfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallInterfaceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				627FF1572AE2443F0032FD8F /* OutgoingInterfaceView.swift */,
 				627FF1592AE244F40032FD8F /* IncomingInterfaceView.swift */,
+				627FF1602AE252560032FD8F /* CallInterfaceView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			files = (
 				627FF1582AE2443F0032FD8F /* OutgoingInterfaceView.swift in Sources */,
 				627FF1482AE235AE0032FD8F /* ContentView.swift in Sources */,
+				627FF1612AE252560032FD8F /* CallInterfaceView.swift in Sources */,
 				627FF15A2AE244F40032FD8F /* IncomingInterfaceView.swift in Sources */,
 				627FF1462AE235AE0032FD8F /* CallKitSampleApp.swift in Sources */,
 				627FF15D2AE24A740032FD8F /* CallManager.swift in Sources */,

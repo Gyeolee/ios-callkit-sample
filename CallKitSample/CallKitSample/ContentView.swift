@@ -47,9 +47,7 @@ struct ContentView: View {
                 Color(color)
                     .frame(width: 176, height: 64)
                     .cornerRadius(32)
-//                    .overlay(
-//                        CallInterfaceView(hasActivateCall: self.$hasActivateCall, callID: self.$callID)
-//                    )
+                    .overlay(CallInterfaceView(hasActivateCall: self.$hasActivateCall, callID: self.$callID))
                 
             } else {
                 HStack {

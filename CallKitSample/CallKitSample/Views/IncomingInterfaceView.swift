@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import CallKit
 
 struct IncomingInterfaceView: View {
     @EnvironmentObject var callManager: CallManager
     
     @Binding var hasActivateCall: Bool
     @Binding var callID: UUID?
+    
+    @State private var providerDelegate: ProviderDelegate?
     
     private let acceptPublishser = NotificationCenter.default
         .publisher(for: Notification.Name.DidCallAccepted)
@@ -24,17 +27,19 @@ struct IncomingInterfaceView: View {
         }
         .onReceive(acceptPublishser) { _ in
             hasActivateCall = true
-            callManager.connectedCall(with: callID!)
+            providerDelegate?.connectedCall(with: callID!)
         }
     }
     
     func receiveCall(from callerID: String, hasVideo: Bool) {
+        providerDelegate = ProviderDelegate(callManager: callManager)
+        
         let uuid = UUID()
         callID = uuid
         
         Task {
             do {
-                try await callManager.reportIncoming(with: uuid, remoteUserID: callerID, hasVideo: hasVideo)
+                try await providerDelegate?.reportIncomingCall(with: uuid, remoteUserID: callerID, hasVideo: hasVideo)
             } catch {
                 print(error.localizedDescription)
             }

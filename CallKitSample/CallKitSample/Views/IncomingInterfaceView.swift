@@ -40,6 +40,7 @@ struct IncomingInterfaceView: View {
         Task {
             do {
                 try await providerDelegate?.reportIncomingCall(with: uuid, remoteUserID: callerID, hasVideo: hasVideo)
+                print("전화 받기")
             } catch {
                 print(error.localizedDescription)
             }

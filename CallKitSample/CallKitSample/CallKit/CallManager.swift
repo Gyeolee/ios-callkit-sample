@@ -39,6 +39,7 @@ final class CallManager: ObservableObject {
 extension CallManager {
     private func requestTransaction(_ transaction: CXTransaction) async throws {
         try await callController.request(transaction)
+        print("Transaction 요청 완료")
     }
 }
 

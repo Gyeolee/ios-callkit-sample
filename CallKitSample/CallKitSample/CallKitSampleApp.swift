@@ -9,7 +9,9 @@ import SwiftUI
 
 @main
 struct CallKitSampleApp: App {
-    let callManager = CallManager()
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    private let callManager: CallManager = .init()
     
     var body: some Scene {
         WindowGroup {
